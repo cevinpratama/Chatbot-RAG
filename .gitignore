@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 .chatbt
-
+__init__.py
 # C extensions
 *.so
 
