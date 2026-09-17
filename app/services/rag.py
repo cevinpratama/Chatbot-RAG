@@ -1,6 +1,7 @@
 import chromadb
 from sentence_transformers import SentenceTransformer
 import os
+import hashlib
 
 class RAGmanager:
     def __init__(self):
@@ -63,6 +64,20 @@ class RAGmanager:
         
         context = "\n".join(retrieved_docs)
         return context
+
+    def get_doc(self):
+        data = self.collection.get()
+        ids = data.get("ids",[])
+        document = data.get("documents", [])
+
+        if not ids:
+            print("kosong bos")
+            return []
+        print(f"ada {len(ids)} data dalam database")
+        for doc_id, doc_text in zip(ids, document):
+            print(f"ID :{doc_id} | Text :{doc_text}")
+        return list(zip(ids, document))
+
     
     
 rag_manager = RAGmanager()
