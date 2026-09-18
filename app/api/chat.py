@@ -23,6 +23,10 @@ async def chat_endpoint(request: ChatRequest):
 def get_list():
     return rag_manager.get_doc()
 
+@router.post("/edit")
+def editrag(new_text, doc_id):
+    rag_manager.edit_document(doc_id, new_text)
+
 @router.get("/version")
 async def get_modversion():
     return await tampilkan_model_aktif()
