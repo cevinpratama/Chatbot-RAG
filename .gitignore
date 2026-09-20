@@ -148,7 +148,7 @@ activemq-data/
 
 # SageMath parsed files
 *.sage.py
-
+chroma_db
 # Environments
 .env
 .envrc
