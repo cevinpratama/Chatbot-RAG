@@ -1,0 +1,7 @@
+perusahaan: sundora finance
+
+Kebijakan Cuti Karyawan: Setiap karyawan berhak mendapatkan cuti tahunan sebanyak 12 hari per tahun setelah melewati masa percobaan 3 bulan.
+Kebijakan WFH: Karyawan diperbolehkan bekerja dari rumah (WFH) maksimal 2 hari dalam seminggu dengan persetujuan manajer.
+Kebijakan Lembur: Uang lembur dibayarkan sebesar Rp 50.000 per jam, maksimal 40 jam dalam sebulan.
+Klaim Kesehatan: Plafon asuransi kesehatan rawat jalan adalah Rp 5.000.000 per tahun.
+Fasilitas Kantor: Karyawan mendapatkan makan siang gratis di kantin kantor setiap hari kerja.
