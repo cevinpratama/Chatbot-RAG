@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from app.schemas.chat import ChatRequest, ChatResponse
+from app.schemas.chat import ChatRequest, ChatResponse, EditRAG
 from app.services.llm import llm_service
 from app.services.rag import rag_manager
 
@@ -12,7 +12,7 @@ async def chat_endpoint(request: ChatRequest):
     try:
         reply = await llm_service.generate_response(
             user_message=request.user_message,
-            session_id=request.session_id
+            session_id=request.session_id 
         )
         return ChatResponse(bot_reply=reply)
     
@@ -24,8 +24,9 @@ def get_list():
     return rag_manager.get_doc()
 
 @router.post("/edit")
-def editrag(new_text, doc_id):
-    rag_manager.edit_document(doc_id, new_text)
+def editrag(request: EditRAG):
+    rag_manager.edit_document(request.doc_id, request.new_text)
+    return 
 
 @router.get("/version")
 async def get_modversion():
