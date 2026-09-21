@@ -25,8 +25,12 @@ def get_list():
 
 @router.post("/edit")
 def editrag(request: EditRAG):
-    rag_manager.edit_document(request.doc_id, request.new_text)
-    return 
+    result = rag_manager.edit_document(request.doc_id, request.new_text)
+    return {
+        "success": True,
+        "message": "Dokumen berhasil diupdate",
+        "data": result
+    }
 
 @router.get("/version")
 async def get_modversion():
